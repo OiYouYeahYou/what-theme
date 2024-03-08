@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        :root {
+            font-size: 200%;
+        }
+
+        .main {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            vertical-align: middle;
+            height: 99vh;
+            width: 100%;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .light, .dark, .unknown {
+            font-size: 3rem;
+        }
+
+        .light, .dark { display: none; }
+        .unknown { display: block; }
+
+        @media (prefers-color-scheme: dark) {
+            .dark { display: block; }
+            .unknown { display: none; }
+            :root { color-scheme: dark; }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .light { display: block; }
+            .unknown { display: none; }
+            :root { color-scheme: light; }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Theme</title>
+</head>
+
+<body>
+    <div class="main">
+        <div>You are using:</div>
+        <div class="light">Light Mode</div>
+        <div class="dark">Dark Mode</div>
+        <div class="unknown">We don't know</div>
+    </div>
+</body>
+
+</html>
